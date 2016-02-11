@@ -10,13 +10,13 @@ from lxml import html
 
 class BotInteraction():
 
-    def __init__(self, channel, nickname, prompt):
+    def __init__(self, config):
         self.end = datetime.now() + timedelta(seconds=10)
         self.timeflood = defaultdict(lambda: 0)
         self.googler = lmgtfy.Lmgtfy()
-        self.channel = channel
-        self.nickname = nickname
-        self.prompt = prompt
+        self.channel = config['channel']
+        self.nickname = config['nickname']
+        self.prompt = config['prompt']
         self.parts = ""
         self.ping = ""
         self.username = ""
@@ -34,8 +34,6 @@ class BotInteraction():
 
                     yield(self.channel, "Wyczuwam drobny spam, " + username)
                     self.timeflood[username] = 0
-
-            #yield self.check_usernameflood(username)
 
             # Interaction user-Malyba
             if message == "ziew":
@@ -60,10 +58,10 @@ class BotInteraction():
                       "uzyskać informację o dostępnych komendach")
 
             if message == self.prompt + "help":
-                yield self.channel, "gogluj [q], linki, wklej, nowosc"
+                yield self.channel, "gogluj [q], linki, wklej, nowosc, botinfo"
 
             if message == self.prompt + "wklej":
-                yield self.channel, ("Nie badz noobem i wklej na: "
+                yield self.channel, ("Nie bądź noobem i wklej na: "
                                      "https://gist.github.com/")
 
             #wypisuje tylko jedna wiadomosc
@@ -110,7 +108,8 @@ class BotInteraction():
             self.parts = string.split(line, ":")
 
             if "QUIT" not in self.parts[1] and \
-               "JOIN" not in self.parts[1] and "PART" not in self.parts[1]:
+               "JOIN" not in self.parts[1] and \
+               "PART" not in self.parts[1]:
 
                 try:
                     # Sets the message variable to the actual message sent

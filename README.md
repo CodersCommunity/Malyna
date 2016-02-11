@@ -2,22 +2,27 @@
 Bot do naszego IRC: freenode.net #mzforum
 
 ## Wymagania
+```
+$ apt-get install python-pip
+$ apt-get install xclip
+```
+## Instalacja
+1. Pobrać kod Malyny
 
-###pip
+  ```
+  $ git clone https://github.com/CodersCommunity/Malyna.git
+  $ cd Malyna
+  ```
+2. Instalacja zależności
+
+  ```
+  $ pip install -r requirements.txt
+  ```
+
+### Uruchomienie
 ```
-apt-get install python-pip
+$ python malyna.py
 ```
-###lmgtfy
-```
-pip install requests
-apt-get install xclip
-pip install lmgtfy
-```
-###lxml
-```
-pip install lxml
-```
-###yaml
-```
-pip install PyYAML
-```
+
+
+
