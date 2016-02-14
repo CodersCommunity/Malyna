@@ -1,0 +1,8 @@
+[Core]
+Name = gogluj
+Module = gogluj
+
+[Documentation]
+Author = Szymon Ryczek
+Website = http://www.szymon-ryczek.pl
+Description = Plugin uczący googlować.

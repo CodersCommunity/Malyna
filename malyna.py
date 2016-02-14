@@ -15,8 +15,6 @@ def main():
         temp = string.split(read_buffer, "\n")
         read_buffer = temp.pop()
 
-        interaction.check_timefloodtime()
-
         for line in temp:
             interaction.check_ping(line)
             return_message = interaction.handle_line(interaction.username,

@@ -1,0 +1,8 @@
+[Core]
+Name = wklej
+Module = wklej
+
+[Documentation]
+Author = Szymon Ryczek
+Website = http://www.szymon-ryczek.pl
+Description = Ktoś wkleja kod na czat? Naucz go porządku.

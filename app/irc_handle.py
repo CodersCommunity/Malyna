@@ -38,11 +38,13 @@ class IrcHandle():
     def send_message(self, return_message):
         channel = ""
         message = ""
-
-        for channel, message in return_message:
-            self.irc_socket.send("PRIVMSG " + channel + " :" +
-                                 message + "\r\n")
-            time.sleep(0.4)
+        try:
+            for channel, message in return_message:
+                self.irc_socket.send("PRIVMSG " + channel + " :" +
+                                     message + "\r\n")
+                time.sleep(0.4)
+        except:
+            pass
 
     def send_ping(self, ping):
         self.irc_socket.send(ping + "\r\n")
