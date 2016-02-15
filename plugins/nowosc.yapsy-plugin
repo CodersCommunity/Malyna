@@ -1,0 +1,8 @@
+[Core]
+Name = nowosc
+Module = nowosc
+
+[Documentation]
+Author = Szymon Ryczek
+Website = http://www.szymon-ryczek.pl
+Description = Najnowsze informacje z forum pod ręką.

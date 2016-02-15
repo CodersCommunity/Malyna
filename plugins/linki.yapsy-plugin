@@ -1,0 +1,8 @@
+[Core]
+Name = linki
+Module = linki
+
+[Documentation]
+Author = Szymon Ryczek
+Website = http://www.szymon-ryczek.pl
+Description = Zbór przydatnych odnośników.
